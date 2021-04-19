@@ -1,3 +1,10 @@
+# Flappy Bird
+
+### Intro
+
+This is a simple game project designed to help my understanding of javascript and as a fun side project.
+
+
 # Fullstack boilerplate
 
 ## Getting Started
