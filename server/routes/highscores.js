@@ -12,8 +12,32 @@ router.get('/', (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(500).json({ message: 'Somthing went wrong' })
+      res.status(500).json({ message: 'Somthing went wrong when getting highscores' })
     })
+})
+
+router.get('/:id', (req, res) => {
+    db.getUser(req.params.id)
+        .then(result => {
+            res.json(result)
+            return null
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({message: "Something went wrong when getting user"})
+        })
+})
+
+router.post('/', (req, res) => {
+    db.addUser(req.body)
+        .then(id => {
+            res.json(id)
+            return null
+        })
+        .catch(err => {
+            console.log(err)
+            res.status(500).json({message: "Something went wrong when adding a user/highscore"})
+        })
 })
 
 module.exports = router
