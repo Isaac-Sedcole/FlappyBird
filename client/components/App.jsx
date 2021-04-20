@@ -2,6 +2,8 @@ import React, { useEffect } from 'react'
 import {Route} from 'react-router-dom'
 import { connect } from 'react-redux'
 import Home from './Home'
+import Game from './Game'
+import Highscores from './Highscores'
 
 import { fetchFruits } from '../actions'
 
