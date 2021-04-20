@@ -30,7 +30,12 @@ const Game = (props) => {
       update()
       draw()
     }, 1000/60)
-
+    document.addEventListener("keydown", e => e.keyCode === 32 ? setBird({
+      x: 50,
+      y: bird.y,
+      velocity: bird.velocity + lift,
+      radius: 20
+    }) : null)
   },[bird])
 
   const update = () => {
